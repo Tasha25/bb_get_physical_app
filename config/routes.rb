@@ -1,4 +1,7 @@
 BbGetPhysicalApp::Application.routes.draw do
+  resources :exercises
+
+
   root to: 'welcome#index'
 
   get "welcome/index"

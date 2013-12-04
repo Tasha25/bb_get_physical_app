@@ -1,2 +1,26 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+%h1 Git Fit
+
+%script#exercises-index-template{type: "text/x-handlebars-template"}
+  %h1 exercises index template
+  %nav
+    %button#new New Exercise
+  %ul#exercises
+
+
+%script#exercises-new-template{type: "text/x-handlebars-template"}
+  %h1 exercises new template
+  %label{for: "exercise-name"} Name
+  %input#exercise-name{type: "text", name: "name"}
+  %label{for: "exercise-calories"} Calories
+  %input#exercise-calories{type: "text", name: "calories"}
+  %label{for: "exercise-difficulty"} Difficulty
+  %select#exercise-difficulty{name: "difficulty"}
+    %option{value: 1} 1
+    %option{value: 2} 2
+    %option{value: 3} 3
+  %input{type: "submit", value: "Create"}
+
+%script#exercise-show-template{type: "text/x-handlebars-template"}
+  %p
+    {{name}}
+    %span.remove X
