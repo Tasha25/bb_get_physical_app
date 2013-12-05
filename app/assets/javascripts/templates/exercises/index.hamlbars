@@ -1,0 +1,5 @@
+%h1 exercises index template
+%nav
+  %button#new New Exercise
+  %button#random Random Workout
+%ul#exercises

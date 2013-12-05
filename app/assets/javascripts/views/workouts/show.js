@@ -14,7 +14,7 @@ App.Views.Workout = Backbone.View.extend({
   render: function(){
     var workout = { exercises: this.collection.toJSON(), total: this.collection.calorieCount() }
     this.$el.html( this.template(workout) );
-    $('#main').append(this.el);
+    $('#exercises').html(this.el);
     return this;
   },
 

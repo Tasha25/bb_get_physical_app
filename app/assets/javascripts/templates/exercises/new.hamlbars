@@ -1,0 +1,14 @@
+%h1 exercises new template
+
+%form
+  %label{for: "exercise-name"} Name
+  %input#exercise-name{name: "name", type: "text"}
+  %label{for: "exercise-calories"} Calories
+  %input#exercise-calories{name: "calories", type: "text"}
+  %label{for: "exercise-difficulty"} Difficulty
+  %select#exercise-difficulty{name: "difficulty"}
+    %option{value: "1"} 1
+    %option{value: "2"} 2
+    %option{value: "3"} 3
+  %input{type: "submit", value: "Create"}/
+  %button#cancel Cancel
