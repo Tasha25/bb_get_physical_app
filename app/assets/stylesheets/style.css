@@ -1,4 +1,29 @@
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
 .view {
-  padding: 5px;
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
   border: 1px solid blue;
+}
+
+#main {
+  overflow: auto;
+}
+
+#exercises {
+  width: 400px;
+  float: left;
+}
+
+#detail {
+  width: 400px;
+  float: left;
+}
+
+.remove {
+  cursor: pointer;
 }

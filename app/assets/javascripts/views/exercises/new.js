@@ -11,9 +11,9 @@ App.Views.ExerciseNew = Backbone.View.extend({
   },
 
   initialize: function(){
-    this.model = new App.Models.Exercise();
+    this.exercise = {};
     this.render();
-    $('body').append( this.el );
+    $('#detail').html( this.el );
   },
 
   render: function(){
@@ -22,23 +22,21 @@ App.Views.ExerciseNew = Backbone.View.extend({
   },
 
   change: function(e){
-    var attributes = {};
-    var attr = $(e.currentTarget).attr('name')
-    attributes[attr] = $(e.currentTarget).val();
-    this.model.set(attributes);
+    var attr = $(e.currentTarget).attr('name');
+    this.exercise[attr] = $(e.currentTarget).val();
   },
 
   create: function(e){
     e.preventDefault();
-    this.model.save();
+    App.router.exercises.create( this.exercise );
     this.remove();
-    App.router.navigate("", {trigger: true});
+    App.router.navigate("exercises");
   },
 
   cancel: function(e){
     e.preventDefault();
     this.remove();
-    App.router.navigate("", {trigger: true});
+    App.router.navigate("exercises");
   }
 
 });

@@ -5,6 +5,7 @@
 //= require handlebars
 //= require underscore
 //= require backbone
+//= require backbone-debug
 //
 //= require app
 //= require router
