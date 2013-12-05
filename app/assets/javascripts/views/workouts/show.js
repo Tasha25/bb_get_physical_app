@@ -1,19 +1,20 @@
-App.Views.Workouts = Backbone.View.extend({
+App.Views.Workout = Backbone.View.extend({
 
   className: "view",
+  template: HandlebarsTemplates['workouts/show'],
 
   events: {
     "click #save"   : "save"
   },
 
   initialize: function(){
-    this.template = Handlebars.compile( $('#workouts-template').html() );
-    $('#exercises').html( this.render().el) ;
-    $('#total').html( this.collection.calorieCount() );
+    this.render();
   },
 
   render: function(){
-    this.$el.html( this.template({ workouts: this.collection.toJSON() }) );
+    var workout = { exercises: this.collection.toJSON(), total: this.collection.calorieCount() }
+    this.$el.html( this.template(workout) );
+    $('#main').append(this.el);
     return this;
   },
 

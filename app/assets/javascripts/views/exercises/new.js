@@ -2,6 +2,8 @@ App.Views.ExerciseNew = Backbone.View.extend({
 
   className: 'view',
 
+  template: HandlebarsTemplates['exercises/new'],
+
   events: {
     "change input, select"      : "change",
     "click input[type=submit]"  : "create",
@@ -10,13 +12,13 @@ App.Views.ExerciseNew = Backbone.View.extend({
 
   initialize: function(){
     this.model = new App.Models.Exercise();
-    this.template = Handlebars.compile( $('#exercises-new-template').html() );
     this.render();
     $('body').append( this.el );
   },
 
   render: function(){
     this.$el.html( this.template() );
+    return this;
   },
 
   change: function(e){

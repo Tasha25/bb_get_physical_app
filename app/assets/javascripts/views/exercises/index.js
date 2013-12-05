@@ -2,13 +2,14 @@ App.Views.Exercises = Backbone.View.extend({
 
   className : "view",
 
+  template: HandlebarsTemplates['exercises/index'],
+
   events: {
     "click #new"    : "new",
     "click #random" : "workout"
   },
 
   initialize: function(){
-    this.template = Handlebars.compile( $('#exercises-index-template').html() );
     this.render();
     this.listenTo(this.collection, "sync", this.render);
     $('body').append(this.el);

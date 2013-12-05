@@ -21,7 +21,7 @@ App.Router = Backbone.Router.extend({
 
   getWorkouts: function(){
     var workouts = new App.Collections.Exercises( this.exercises.sample(3) );
-    App.view = new App.Views.Workouts({collection: workouts});
+    App.view = new App.Views.Workout({collection: workouts});
   }
 
 });
